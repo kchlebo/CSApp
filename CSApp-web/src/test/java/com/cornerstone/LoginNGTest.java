@@ -38,6 +38,7 @@ public class LoginNGTest {
     /**
      * Test of processRequest method, of class Login.
      */
+    /*
     @org.testng.annotations.Test
     public void testProcessRequest() throws Exception {
         System.out.println("processRequest");
@@ -51,7 +52,7 @@ public class LoginNGTest {
 
     /**
      * Test of doGet method, of class Login.
-     */
+     
     @org.testng.annotations.Test
     public void testDoGet() throws Exception {
         System.out.println("doGet");
@@ -65,7 +66,7 @@ public class LoginNGTest {
 
     /**
      * Test of doPost method, of class Login.
-     */
+     
     @org.testng.annotations.Test
     public void testDoPost() throws Exception {
         System.out.println("doPost");
@@ -76,7 +77,7 @@ public class LoginNGTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-
+*/
     /**
      * Test of getServletInfo method, of class Login.
      */

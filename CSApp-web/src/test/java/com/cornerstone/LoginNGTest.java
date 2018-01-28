@@ -34,19 +34,7 @@ public class LoginNGTest {
     public void tearDownMethod() throws Exception {
     }
 
-    /**
-     * Test of openURL method, of class Login.
-     */
-    @org.testng.annotations.Test
-    public void testOpenURL() {
-        System.out.println("openURL");
-        HttpServletRequest request = null;
-        HttpServletResponse response = null;
-        Login.openURL(request, response);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
+    
     /**
      * Test of processRequest method, of class Login.
      */

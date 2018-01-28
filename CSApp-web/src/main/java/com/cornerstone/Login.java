@@ -5,8 +5,9 @@
  */
 package com.cornerstone;
 
+import com.cornerstone.utilities.URLHandler;
+import com.cornerstone.utilities.URLHandler.PageType;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Login extends HttpServlet {
     
-    public static final String HOMEURL="/WEB-INF/view/home.jsp";
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -28,21 +29,11 @@ public class Login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    public static void openURL(HttpServletRequest request, HttpServletResponse response)
-    {
-        
-        try{
-            request.getRequestDispatcher(HOMEURL).forward(request, response);
-        }
-        catch(Exception ex)
-        {
-            ex.printStackTrace();
-        }
-    }
+    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                openURL(request, response);
+                URLHandler.openURL(request, response,PageType.HOME);
             }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.cornerstone.datamodel;
+package com.cornerstone.entity;
 
 import java.io.Serializable;
 import java.util.Collection;

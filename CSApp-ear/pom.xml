@@ -35,6 +35,7 @@
                 <version>2.8</version>
                 <configuration>
                     <version>6</version>
+                    <skinnyWars>true</skinnyWars>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                 </configuration>
             </plugin>

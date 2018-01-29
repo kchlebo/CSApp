@@ -5,19 +5,23 @@
  */
 package com.cornerstone;
 
+import com.cornerstone.session.IncidentFacade;
 import java.io.IOException;
-import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+//import com.cornerstone.session;
 
 /**
  *
  * @author Kornel
  */
 public class ControllerServlet extends HttpServlet {
-
+    
+    @EJB
+    private IncidentFacade incidentFacade;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

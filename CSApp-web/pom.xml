@@ -35,6 +35,7 @@
             <artifactId>CSApp-ejb</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax</groupId>

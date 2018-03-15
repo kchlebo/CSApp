@@ -5,8 +5,13 @@
  */
 package com.cornerstone;
 
+import com.cornerstone.entity.Incident;
+import com.cornerstone.session.IncidentFacade;
 import com.cornerstone.utilities.URLHandler;
 import java.io.IOException;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Home extends HttpServlet {
 
+    @EJB
+    private IncidentFacade incidentFacade;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -29,7 +36,12 @@ public class Home extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            //Open home page
             URLHandler.openURL(request, response,URLHandler.PageType.HOME);
+            //Get all incidents
+            List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
+            request.setAttribute("allIncidents", allIncidents);
+            //request.getRequestDispatcher("/WEB-INF/view/home.jsp").forward(request,response);
         }
     
 

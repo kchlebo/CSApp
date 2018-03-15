@@ -5,9 +5,12 @@
  */
 package com.cornerstone;
 
+import com.cornerstone.session.IncidentFacade;
 import com.cornerstone.utilities.URLHandler;
 import com.cornerstone.utilities.URLHandler.PageType;
 import java.io.IOException;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Login extends HttpServlet {
     
-    
+    @EJB
+    private IncidentFacade incidentFacade;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,8 +38,12 @@ public class Login extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                RequestDispatcher rd = request.getRequestDispatcher("Home");
-                rd.forward(request,response);
+                //RequestDispatcher rd = request.getRequestDispatcher("Home");
+                //rd.forward(request,response);
+                URLHandler.openURL(request, response,URLHandler.PageType.HOME);
+                List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
+                request.setAttribute("allIncidents", allIncidents);
+                request.getRequestDispatcher("Login").forward(request,response);
             }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

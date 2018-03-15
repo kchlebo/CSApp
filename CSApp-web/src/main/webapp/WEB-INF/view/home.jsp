@@ -35,10 +35,14 @@
             <div class="pageTitle">Home</div>
             <div class="myIncidentsGrid">
                 [My incidents]
-                <table>
-                    <tr>
-                        <td>data</td>
-                    </tr>
+                <table id="allIncidentsTable">
+                    
+                    <c:forEach var="incident" items="${allIncidents}" varStatus="iter" >
+                        <tr>
+                            <td>${incident.IncidentID}</td>
+                        </tr>
+                    </c:forEach>
+                    
                 </table>
             </div>
             <div class="groupIncidentsGrid">

@@ -34,8 +34,13 @@
             <groupId>com.cornerstone</groupId>
             <artifactId>CSApp-ejb</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <type>jar</type>
+            <!--
+            <type>ejb</type>
+            
+            Commented out to solve Glassfish exception - javax.naming.NameNotFoundException
+            -->
             <scope>provided</scope>
+            
         </dependency>
         <dependency>
             <groupId>javax</groupId>

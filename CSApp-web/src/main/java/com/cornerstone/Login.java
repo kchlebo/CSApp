@@ -5,7 +5,8 @@
  */
 package com.cornerstone;
 
-import com.cornerstone.session.IncidentFacade;
+
+import com.cornerstone.session.IncidentFacadeLocal;
 import com.cornerstone.utilities.URLHandler;
 import com.cornerstone.utilities.URLHandler.PageType;
 import java.io.IOException;
@@ -24,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Login extends HttpServlet {
     
     @EJB
-    private IncidentFacade incidentFacade;
+    private IncidentFacadeLocal incidentFacade;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

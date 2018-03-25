@@ -39,10 +39,7 @@ public class GroupPermission implements Serializable {
     @JoinColumn(name = "EmployeeID", referencedColumnName = "EmployeeID", nullable = false)
     @ManyToOne(optional = false)
     private Employee employeeID;
-    @JoinColumn(name = "GroupID", referencedColumnName = "GroupID", nullable = false)
-    @ManyToOne(optional = false)
-    private Group1 groupID;
-
+   
     public GroupPermission() {
     }
 
@@ -66,13 +63,7 @@ public class GroupPermission implements Serializable {
         this.employeeID = employeeID;
     }
 
-    public Group1 getGroupID() {
-        return groupID;
-    }
-
-    public void setGroupID(Group1 groupID) {
-        this.groupID = groupID;
-    }
+    
 
     @Override
     public int hashCode() {

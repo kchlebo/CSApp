@@ -41,10 +41,18 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
                 //RequestDispatcher rd = request.getRequestDispatcher("Home");
                 //rd.forward(request,response);
-                URLHandler.openURL(request, response,URLHandler.PageType.HOME);
-                List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
-                request.setAttribute("allIncidents", allIncidents);
-                request.getRequestDispatcher("Login").forward(request,response);
+                String HOMEURL="/WEB-INF/view/home.jsp";
+                //URLHandler.openURL(request, response,URLHandler.PageType.HOME);
+                //List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
+                //com.cornerstone.entity.Incident inc = incidentFacade.find(1);
+                request.setAttribute("allIncidents", incidentFacade.findAll());
+                try{
+                    request.getRequestDispatcher(HOMEURL).forward(request,response);
+                }
+                catch(Exception ex)
+                {
+                    ex.printStackTrace();
+                }
             }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

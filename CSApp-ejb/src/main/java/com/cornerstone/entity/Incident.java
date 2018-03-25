@@ -85,10 +85,7 @@ public class Incident implements Serializable {
     @JoinColumn(name = "SubmittedBy", referencedColumnName = "EmployeeID", nullable = false)
     @ManyToOne(optional = false)
     private Employee submittedBy;
-    @JoinColumn(name = "GroupID", referencedColumnName = "GroupID")
-    @ManyToOne
-    private Group1 groupID;
-
+    
     public Incident() {
     }
 
@@ -195,13 +192,7 @@ public class Incident implements Serializable {
         this.submittedBy = submittedBy;
     }
 
-    public Group1 getGroupID() {
-        return groupID;
-    }
-
-    public void setGroupID(Group1 groupID) {
-        this.groupID = groupID;
-    }
+    
 
     @Override
     public int hashCode() {

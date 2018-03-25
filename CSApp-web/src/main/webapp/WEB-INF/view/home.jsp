@@ -4,6 +4,7 @@
     Author     : Kornel
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,13 +35,21 @@
         <div id="indexRightColumn">
             <div class="pageTitle">Home</div>
             <div class="myIncidentsGrid">
-                Incident size:  <span>${allIncidents}</span>
+                
                 [My incidents]
-                <table id="allIncidentsTable">
-                    
-                    <c:forEach var="incident" items="${allIncidents}" varStatus="iter" >
-                        <tr>
-                            <td>${incident.incidentStatus}</td>
+                <table id="myIncidentsTable">
+                    <th>
+                            <td>Incident ID</td>
+                            <td>Status</td>
+                            <td>Decription</td>
+                            <td>Owner</td>
+                    </th>
+                   <c:forEach var="inc" items="${myIncidents}" >
+                       <tr>
+                            <td>${inc.incidentID}</td>
+                            <td>${inc.incidentStatus}</td>
+                            <td>${inc.description}</td>
+                            <td>${inc.owner}</td>
                         </tr>
                     </c:forEach>
                     
@@ -48,10 +57,22 @@
             </div>
             <div class="groupIncidentsGrid">
                 [Incidents in my group]
-                <table>
-                    <tr>
-                        <td>data</td>
-                    </tr>
+                <table id="groupIncidentsTable">
+                    <th>
+                            <td>Incident ID</td>
+                            <td>Status</td>
+                            <td>Decription</td>
+                            <td>Owner</td>
+                    </th>
+                   <c:forEach var="incident" items="${allIncidents}" >
+                       <tr>
+                            <td>${incident.incidentID}</td>
+                            <td>${incident.incidentStatus}</td>
+                            <td>${incident.description}</td>
+                            <td>${incident.owner}</td>
+                        </tr>
+                    </c:forEach>
+                    
                 </table>
             </div>
         </div>

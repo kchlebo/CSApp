@@ -41,7 +41,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Incident.findByPriority", query = "SELECT i FROM Incident i WHERE i.priority = :priority")
     , @NamedQuery(name = "Incident.findByDescription", query = "SELECT i FROM Incident i WHERE i.description = :description")
     , @NamedQuery(name = "Incident.findByCreatedAt", query = "SELECT i FROM Incident i WHERE i.createdAt = :createdAt")
-    , @NamedQuery(name = "Incident.findByClosedAt", query = "SELECT i FROM Incident i WHERE i.closedAt = :closedAt")})
+    , @NamedQuery(name = "Incident.findByClosedAt", query = "SELECT i FROM Incident i WHERE i.closedAt = :closedAt")
+    , @NamedQuery(name = "Incident.findByOwner", query = "SELECT i FROM Incident i WHERE i.owner = :owner")
+})
 public class Incident implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -5,7 +5,9 @@
  */
 package com.cornerstone.session;
 
+import com.cornerstone.entity.Employee;
 import com.cornerstone.entity.Incident;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,5 +30,12 @@ public class IncidentFacade extends AbstractFacade<Incident> implements Incident
     public IncidentFacade() {
         super(Incident.class);
     }
+
+    @Override
+    public List<Incident> findByOwnerID(Employee id) {
+        return em.createNamedQuery("Incident.findByOwner").getResultList();
+    }
+    
+    
     
 }

@@ -5,6 +5,7 @@
  */
 package com.cornerstone.session;
 
+import com.cornerstone.entity.Employee;
 import com.cornerstone.entity.Incident;
 import java.util.List;
 import javax.ejb.Local;
@@ -25,6 +26,8 @@ public interface IncidentFacadeLocal {
     Incident find(Object id);
 
     List<Incident> findAll();
+    
+    List<Incident> findByOwnerID(Employee id);
 
     List<Incident> findRange(int[] range);
 

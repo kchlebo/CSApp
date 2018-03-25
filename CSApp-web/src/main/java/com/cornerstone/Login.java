@@ -6,17 +6,21 @@
 package com.cornerstone;
 
 
+import com.cornerstone.session.EmployeeFacadeLocal;
+import com.cornerstone.session.IncidentFacade;
 import com.cornerstone.session.IncidentFacadeLocal;
 import com.cornerstone.utilities.URLHandler;
 import com.cornerstone.utilities.URLHandler.PageType;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.UserTransaction;
 
 /**
  *
@@ -26,6 +30,9 @@ public class Login extends HttpServlet {
     
     @EJB
     private IncidentFacadeLocal incidentFacade;
+    @EJB
+    private EmployeeFacadeLocal employeeFacade;
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,9 +51,13 @@ public class Login extends HttpServlet {
                 String HOMEURL="/WEB-INF/view/home.jsp";
                 //URLHandler.openURL(request, response,URLHandler.PageType.HOME);
                 List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
+                
+                com.cornerstone.entity.Employee emp = employeeFacade.find("1");
+                List<com.cornerstone.entity.Incident> myIncidents = incidentFacade.findByOwnerID(emp);
                 //com.cornerstone.entity.Incident inc = incidentFacade.find(1);
                 
                 request.setAttribute("allIncidents", allIncidents);
+                request.setAttribute("myIncidents", myIncidents);
                 // Check if null
                 request.setAttribute("incidentListSize", allIncidents.size());
                 try{

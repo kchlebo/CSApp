@@ -20,6 +20,6 @@ public class TearDown {
 	public static void tear()
 	{
 		BrowserFactory.closeAllDriver();
-		Log.endTestCase();
+		Log.end();
 	}
 }

@@ -20,7 +20,7 @@ public class Log {
  
 // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
  
-public static void startTestCase(){
+public static void start(){
  
     Log.info("****************************************************************************************");
  
@@ -36,7 +36,7 @@ public static void startTestCase(){
  
     //This is to print log for the ending of the test case
  
-public static void endTestCase(){
+public static void end(){
  
     Log.info("XXXXXXXXXXXXXXXXXXXXXXX             "+"-E---N---D-"+"             XXXXXXXXXXXXXXXXXXXXXX");
  

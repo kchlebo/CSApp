@@ -21,7 +21,7 @@ public class Init {
 	public static void initialize()
 	{
 		//DOMConfigurator.configure("./src/main/java/log4j2.xml");
-		Log.startTestCase();
+		Log.start();
 
 	}
 }

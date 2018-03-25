@@ -34,12 +34,13 @@
         <div id="indexRightColumn">
             <div class="pageTitle">Home</div>
             <div class="myIncidentsGrid">
+                Incident size:  <span>${allIncidents}</span>
                 [My incidents]
                 <table id="allIncidentsTable">
                     
                     <c:forEach var="incident" items="${allIncidents}" varStatus="iter" >
                         <tr>
-                            <td>${incident.IncidentID}</td>
+                            <td>${incident.incidentStatus}</td>
                         </tr>
                     </c:forEach>
                     

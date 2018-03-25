@@ -43,9 +43,12 @@ public class Login extends HttpServlet {
                 //rd.forward(request,response);
                 String HOMEURL="/WEB-INF/view/home.jsp";
                 //URLHandler.openURL(request, response,URLHandler.PageType.HOME);
-                //List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
+                List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
                 //com.cornerstone.entity.Incident inc = incidentFacade.find(1);
-                request.setAttribute("allIncidents", incidentFacade.findAll());
+                
+                request.setAttribute("allIncidents", allIncidents);
+                // Check if null
+                request.setAttribute("incidentListSize", allIncidents.size());
                 try{
                     request.getRequestDispatcher(HOMEURL).forward(request,response);
                 }

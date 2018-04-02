@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -33,7 +34,16 @@ public class IncidentFacade extends AbstractFacade<Incident> implements Incident
 
     @Override
     public List<Incident> findByOwnerID(Employee id) {
-        return em.createNamedQuery("Incident.findByOwner").getResultList();
+        Query q = em.createNamedQuery("Incident.findByOwner");
+        q.setParameter("owner", id);
+        return q.getResultList();
+    }
+
+    @Override
+    public List<Incident> findByOwnerID(Integer id) {
+        Query empQuery = em.createNamedQuery("Employee.findByEmployeeID").setParameter("employeeID", id);
+        Query incQuery = em.createNamedQuery("Incident.findByOwner").setParameter("owner", empQuery.getSingleResult());
+        return incQuery.getResultList();
     }
     
     

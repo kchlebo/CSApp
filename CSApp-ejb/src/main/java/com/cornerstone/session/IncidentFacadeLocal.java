@@ -28,7 +28,9 @@ public interface IncidentFacadeLocal {
     List<Incident> findAll();
     
     List<Incident> findByOwnerID(Employee id);
-
+    
+    List<Incident> findByOwnerID(Integer id);
+    
     List<Incident> findRange(int[] range);
 
     int count();

@@ -51,11 +51,11 @@ public class Login extends HttpServlet {
                 String HOMEURL="/WEB-INF/view/home.jsp";
                 //URLHandler.openURL(request, response,URLHandler.PageType.HOME);
                 List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
-                
-                com.cornerstone.entity.Employee emp = employeeFacade.find("1");
-                List<com.cornerstone.entity.Incident> myIncidents = incidentFacade.findByOwnerID(emp);
+                Integer i=1;
+                //com.cornerstone.entity.Employee emp = employeeFacade.find(i);
+                List<com.cornerstone.entity.Incident> myIncidents = incidentFacade.findByOwnerID(i);
                 //com.cornerstone.entity.Incident inc = incidentFacade.find(1);
-                
+//                
                 request.setAttribute("allIncidents", allIncidents);
                 request.setAttribute("myIncidents", myIncidents);
                 // Check if null

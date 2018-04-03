@@ -34,12 +34,15 @@ public class GroupPermission implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "GroupPermissionID", nullable = false)
+    @Column(name = "GroupPermissionID")
     private Integer groupPermissionID;
-    @JoinColumn(name = "EmployeeID", referencedColumnName = "EmployeeID", nullable = false)
+    @JoinColumn(name = "EmployeeID", referencedColumnName = "EmployeeID")
     @ManyToOne(optional = false)
     private Employee employeeID;
-   
+    @JoinColumn(name = "GroupID", referencedColumnName = "GroupID")
+    @ManyToOne(optional = false)
+    private SupportGroup groupID;
+
     public GroupPermission() {
     }
 
@@ -63,7 +66,13 @@ public class GroupPermission implements Serializable {
         this.employeeID = employeeID;
     }
 
-    
+    public SupportGroup getGroupID() {
+        return groupID;
+    }
+
+    public void setGroupID(SupportGroup groupID) {
+        this.groupID = groupID;
+    }
 
     @Override
     public int hashCode() {
@@ -87,7 +96,7 @@ public class GroupPermission implements Serializable {
 
     @Override
     public String toString() {
-        return "com.cornerstone.datamodel.GroupPermission[ groupPermissionID=" + groupPermissionID + " ]";
+        return "com.cornerstone.entity.GroupPermission[ groupPermissionID=" + groupPermissionID + " ]";
     }
     
 }

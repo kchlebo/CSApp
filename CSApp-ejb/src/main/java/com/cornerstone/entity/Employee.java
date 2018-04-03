@@ -38,6 +38,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Employee.findBySalt", query = "SELECT e FROM Employee e WHERE e.salt = :salt")})
 public class Employee implements Serializable {
 
+    @Lob
+    @Column(name = "PasswordHash")
+    private byte[] passwordHash;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -49,9 +53,6 @@ public class Employee implements Serializable {
     @Size(min = 1, max = 255)
     @Column(name = "UserName", nullable = false, length = 255)
     private String userName;
-    @Lob
-    @Column(name = "PasswordHash")
-    private byte[] passwordHash;
     @Size(max = 36)
     @Column(name = "Salt", length = 36)
     private String salt;
@@ -98,13 +99,6 @@ public class Employee implements Serializable {
         this.userName = userName;
     }
 
-    public byte[] getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(byte[] passwordHash) {
-        this.passwordHash = passwordHash;
-    }
 
     public String getSalt() {
         return salt;
@@ -189,6 +183,14 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         return "com.cornerstone.datamodel.Employee[ employeeID=" + employeeID + " ]";
+    }
+
+    public byte[] getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(byte[] passwordHash) {
+        this.passwordHash = passwordHash;
     }
     
 }

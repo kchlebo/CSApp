@@ -3,14 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.cornerstone.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,14 +15,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -41,53 +36,48 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Incident.findByPriority", query = "SELECT i FROM Incident i WHERE i.priority = :priority")
     , @NamedQuery(name = "Incident.findByDescription", query = "SELECT i FROM Incident i WHERE i.description = :description")
     , @NamedQuery(name = "Incident.findByCreatedAt", query = "SELECT i FROM Incident i WHERE i.createdAt = :createdAt")
-    , @NamedQuery(name = "Incident.findByClosedAt", query = "SELECT i FROM Incident i WHERE i.closedAt = :closedAt")
-    , @NamedQuery(name = "Incident.findByOwner", query = "SELECT i FROM Incident i WHERE i.owner = :owner")
-})
+    , @NamedQuery(name = "Incident.findByClosedAt", query = "SELECT i FROM Incident i WHERE i.closedAt = :closedAt")})
 public class Incident implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "IncidentID", nullable = false)
+    @Column(name = "IncidentID")
     private Integer incidentID;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 15)
-    @Column(name = "IncidentStatus", nullable = false, length = 15)
+    @Column(name = "IncidentStatus")
     private String incidentStatus;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 15)
-    @Column(name = "Priority", nullable = false, length = 15)
+    @Column(name = "Priority")
     private String priority;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
-    @Column(name = "Description", nullable = false, length = 255)
+    @Column(name = "Description")
     private String description;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "CreatedAt", nullable = false)
+    @Column(name = "CreatedAt")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
     @Column(name = "ClosedAt")
     @Temporal(TemporalType.TIMESTAMP)
     private Date closedAt;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "incidentID")
-    private Collection<Email> emailCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "incidentID")
-    private Collection<IncidentWorklog> incidentWorklogCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "incidentID")
-    private Collection<IncidentStatusHistory> incidentStatusHistoryCollection;
     @JoinColumn(name = "Owner", referencedColumnName = "EmployeeID")
     @ManyToOne
     private Employee owner;
-    @JoinColumn(name = "SubmittedBy", referencedColumnName = "EmployeeID", nullable = false)
+    @JoinColumn(name = "SubmittedBy", referencedColumnName = "EmployeeID")
     @ManyToOne(optional = false)
     private Employee submittedBy;
-    
+    @JoinColumn(name = "GroupID", referencedColumnName = "GroupID")
+    @ManyToOne
+    private SupportGroup groupID;
+
     public Incident() {
     }
 
@@ -151,33 +141,6 @@ public class Incident implements Serializable {
         this.closedAt = closedAt;
     }
 
-    @XmlTransient
-    public Collection<Email> getEmailCollection() {
-        return emailCollection;
-    }
-
-    public void setEmailCollection(Collection<Email> emailCollection) {
-        this.emailCollection = emailCollection;
-    }
-
-    @XmlTransient
-    public Collection<IncidentWorklog> getIncidentWorklogCollection() {
-        return incidentWorklogCollection;
-    }
-
-    public void setIncidentWorklogCollection(Collection<IncidentWorklog> incidentWorklogCollection) {
-        this.incidentWorklogCollection = incidentWorklogCollection;
-    }
-
-    @XmlTransient
-    public Collection<IncidentStatusHistory> getIncidentStatusHistoryCollection() {
-        return incidentStatusHistoryCollection;
-    }
-
-    public void setIncidentStatusHistoryCollection(Collection<IncidentStatusHistory> incidentStatusHistoryCollection) {
-        this.incidentStatusHistoryCollection = incidentStatusHistoryCollection;
-    }
-
     public Employee getOwner() {
         return owner;
     }
@@ -194,7 +157,13 @@ public class Incident implements Serializable {
         this.submittedBy = submittedBy;
     }
 
-    
+    public SupportGroup getGroupID() {
+        return groupID;
+    }
+
+    public void setGroupID(SupportGroup groupID) {
+        this.groupID = groupID;
+    }
 
     @Override
     public int hashCode() {
@@ -218,7 +187,7 @@ public class Incident implements Serializable {
 
     @Override
     public String toString() {
-        return "com.cornerstone.datamodel.Incident[ incidentID=" + incidentID + " ]";
+        return "com.cornerstone.entity.Incident[ incidentID=" + incidentID + " ]";
     }
-
+    
 }

@@ -50,16 +50,18 @@ public class Login extends HttpServlet {
                 //rd.forward(request,response);
                 String HOMEURL="/WEB-INF/view/home.jsp";
                 //URLHandler.openURL(request, response,URLHandler.PageType.HOME);
-                List<com.cornerstone.entity.Incident> allIncidents = incidentFacade.findAll();
+                //Test data
+                //TODO change to user parameter
                 Integer i=1;
+                List<com.cornerstone.entity.Incident> groupIncidents = incidentFacade.findAllInEmployeesGroups(i);
+                
                 //com.cornerstone.entity.Employee emp = employeeFacade.find(i);
                 List<com.cornerstone.entity.Incident> myIncidents = incidentFacade.findByOwnerID(i);
                 //com.cornerstone.entity.Incident inc = incidentFacade.find(1);
 //                
-                request.setAttribute("allIncidents", allIncidents);
+                request.setAttribute("groupIncidents", groupIncidents);
                 request.setAttribute("myIncidents", myIncidents);
-                // Check if null
-                request.setAttribute("incidentListSize", allIncidents.size());
+                
                 try{
                     request.getRequestDispatcher(HOMEURL).forward(request,response);
                 }

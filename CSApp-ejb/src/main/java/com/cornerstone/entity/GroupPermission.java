@@ -27,7 +27,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "GroupPermission.findAll", query = "SELECT g FROM GroupPermission g")
-    , @NamedQuery(name = "GroupPermission.findByGroupPermissionID", query = "SELECT g FROM GroupPermission g WHERE g.groupPermissionID = :groupPermissionID")})
+    , @NamedQuery(name = "GroupPermission.findByGroupPermissionID", query = "SELECT g FROM GroupPermission g WHERE g.groupPermissionID = :groupPermissionID")
+    , @NamedQuery(name = "GroupPermission.findByEmployeeID", query = "SELECT g.groupID FROM GroupPermission g WHERE g.employeeID = :employeeID")
+})
 public class GroupPermission implements Serializable {
 
     private static final long serialVersionUID = 1L;

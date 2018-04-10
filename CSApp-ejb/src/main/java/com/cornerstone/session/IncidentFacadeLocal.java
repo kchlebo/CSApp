@@ -31,6 +31,8 @@ public interface IncidentFacadeLocal {
     
     List<Incident> findByOwnerID(Integer id);
     
+    List<Incident> findAllInEmployeesGroups(Integer id);
+    
     List<Incident> findRange(int[] range);
 
     int count();

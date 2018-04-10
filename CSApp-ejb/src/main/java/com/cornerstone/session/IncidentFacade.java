@@ -7,6 +7,7 @@ package com.cornerstone.session;
 
 import com.cornerstone.entity.Employee;
 import com.cornerstone.entity.Incident;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -45,6 +46,21 @@ public class IncidentFacade extends AbstractFacade<Incident> implements Incident
         Query incQuery = em.createNamedQuery("Incident.findByOwner").setParameter("owner", empQuery.getSingleResult());
         return incQuery.getResultList();
     }
+
+    @Override
+    public List<Incident> findAllInEmployeesGroups(Integer id) {
+        List<Incident> result = new ArrayList<>();
+        Query employee = em.createNamedQuery("Employee.findByEmployeeID").setParameter("employeeID", id);
+        Query empGroups = em.createNamedQuery("GroupPermission.findByEmployeeID").setParameter("employeeID", employee.getSingleResult());
+        Query incForGroup = em.createNamedQuery("Incident.findByGroupID");
+        for(Object groupID : empGroups.getResultList()){
+            incForGroup.setParameter("groupID", groupID);
+            result.addAll(incForGroup.getResultList());
+        }
+        return result;
+    }
+    
+    
     
     
     

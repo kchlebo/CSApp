@@ -64,7 +64,7 @@
                             <td>Decription</td>
                             <td>Owner</td>
                     </th>
-                   <c:forEach var="incident" items="${allIncidents}" >
+                   <c:forEach var="incident" items="${groupIncidents}" >
                        <tr>
                             <td>${incident.incidentID}</td>
                             <td>${incident.incidentStatus}</td>

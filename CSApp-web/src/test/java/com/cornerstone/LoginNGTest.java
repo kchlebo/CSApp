@@ -46,7 +46,7 @@ public class LoginNGTest {
         HttpServletResponse response = null;
         Login instance = new Login();
         instance.processRequest(request, response);
-        // TODO review the generated test code and remove the default call to fail.
+        // TODO rewrite tests in cucumber
         //fail("The test case is a prototype.");
     }
 
@@ -60,7 +60,7 @@ public class LoginNGTest {
         HttpServletResponse response = null;
         Login instance = new Login();
         instance.doGet(request, response);
-        // TODO review the generated test code and remove the default call to fail.
+        
         //fail("The test case is a prototype.");
     }
 
@@ -74,7 +74,7 @@ public class LoginNGTest {
         HttpServletResponse response = null;
         Login instance = new Login();
         instance.doPost(request, response);
-        // TODO review the generated test code and remove the default call to fail.
+        
         //fail("The test case is a prototype.");
     }
 */
@@ -88,7 +88,7 @@ public class LoginNGTest {
         String expResult = "Short description";
         String result = instance.getServletInfo();
         assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
+        
         //fail("The test case is a prototype.");
     }
     

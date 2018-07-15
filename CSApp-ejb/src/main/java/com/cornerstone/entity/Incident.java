@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Incident.findByDescription", query = "SELECT i FROM Incident i WHERE i.description = :description")
     , @NamedQuery(name = "Incident.findByCreatedAt", query = "SELECT i FROM Incident i WHERE i.createdAt = :createdAt")
     , @NamedQuery(name = "Incident.findByClosedAt", query = "SELECT i FROM Incident i WHERE i.closedAt = :closedAt")
-    , @NamedQuery(name = "Incident.findByOwner", query = "SELECT i FROM Incident i WHERE i.owner = :owner")
-    , @NamedQuery(name = "Incident.findByGroupID", query = "SELECT i FROM Incident i WHERE i.groupID = :groupID")
+    , @NamedQuery(name = "Incident.findByOwner", query = "SELECT i FROM Incident i JOIN i.owner o JOIN o.peopleID p WHERE i.owner = :owner")
+    , @NamedQuery(name = "Incident.findByGroupID", query = "SELECT i FROM Incident i JOIN i.owner o JOIN o.peopleID p WHERE i.groupID = :groupID")
 })
 public class Incident implements Serializable {
 
@@ -80,7 +80,7 @@ public class Incident implements Serializable {
     @JoinColumn(name = "GroupID", referencedColumnName = "GroupID")
     @ManyToOne
     private SupportGroup groupID;
-
+    
     public Incident() {
     }
 

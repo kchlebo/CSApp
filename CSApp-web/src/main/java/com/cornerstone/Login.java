@@ -56,8 +56,8 @@ public class Login extends HttpServlet {
                 List<com.cornerstone.entity.Incident> groupIncidents = incidentFacade.findAllInEmployeesGroups(i);
                 
                 //com.cornerstone.entity.Employee emp = employeeFacade.find(i);
-                List<com.cornerstone.entity.Incident> myIncidents = incidentFacade.findByOwnerID(i);
-                //com.cornerstone.entity.Incident inc = incidentFacade.find(1);
+                List<com.cornerstone.entity.Incident> myIncidents = incidentFacade.findByOwnerID(i);                
+//com.cornerstone.entity.Incident inc = incidentFacade.find(1);
 //                
                 request.setAttribute("groupIncidents", groupIncidents);
                 request.setAttribute("myIncidents", myIncidents);

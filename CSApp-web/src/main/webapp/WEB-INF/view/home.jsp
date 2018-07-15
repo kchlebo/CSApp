@@ -44,12 +44,12 @@
                             <td>Decription</td>
                             <td>Owner</td>
                     </th>
-                   <c:forEach var="inc" items="${myIncidents}" >
+                   <c:forEach var="myIncident" items="${myIncidents}" >
                        <tr>
-                            <td>${inc.incidentID}</td>
-                            <td>${inc.incidentStatus}</td>
-                            <td>${inc.description}</td>
-                            <td>${inc.owner}</td>
+                            <td>${myIncident.incidentID}</td>
+                            <td>${myIncident.incidentStatus}</td>
+                            <td>${myIncident.description}</td>
+                            <td>${myIncident.owner.peopleID.firstName} ${myIncident.owner.peopleID.lastName}</td>
                         </tr>
                     </c:forEach>
                     
@@ -64,12 +64,12 @@
                             <td>Decription</td>
                             <td>Owner</td>
                     </th>
-                   <c:forEach var="incident" items="${groupIncidents}" >
+                   <c:forEach var="groupIncident" items="${groupIncidents}" >
                        <tr>
-                            <td>${incident.incidentID}</td>
-                            <td>${incident.incidentStatus}</td>
-                            <td>${incident.description}</td>
-                            <td>${incident.owner}</td>
+                            <td>${groupIncident.incidentID}</td>
+                            <td>${groupIncident.incidentStatus}</td>
+                            <td>${groupIncident.description}</td>
+                            <td>${groupIncident.owner.peopleID.firstName} ${groupIncident.owner.peopleID.lastName}</td>
                         </tr>
                     </c:forEach>
                     

@@ -61,7 +61,8 @@ public class Login extends HttpServlet {
 //                
                 request.setAttribute("groupIncidents", groupIncidents);
                 request.setAttribute("myIncidents", myIncidents);
-                
+                //TODO write login logic
+                //TODO establish and maintain user session
                 try{
                     request.getRequestDispatcher(HOMEURL).forward(request,response);
                 }

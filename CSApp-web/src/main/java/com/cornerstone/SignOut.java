@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author 604772006
  */
 public class SignOut extends HttpServlet {
-
+//TODO refactor sign out ot logout
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

@@ -274,8 +274,30 @@ li#admin:hover .hoverdown-content{
     float:left;
 }
 
-/* TODO add table alignment logic 
-*/
+/* Table styling */
+
+table{
+    table-layout: auto;
+    width: 100%; 
+}
+
+/* Green column headers with white text */
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Stripe alternating rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 3px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
 
 
 

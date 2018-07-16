@@ -36,14 +36,14 @@
             <div class="pageTitle">Home</div>
             <div class="myIncidentsGrid">
                 
-                [My incidents]
+                <div id="form-header">My incidents</div>
                 <table id="myIncidentsTable">
-                    <th>
-                            <td>Incident ID</td>
-                            <td>Status</td>
-                            <td>Decription</td>
-                            <td>Owner</td>
-                    </th>
+                    <tr>
+                            <th>Incident ID</th>
+                            <th>Status</th>
+                            <th>Decription</th>
+                            <th>Owner</th>
+                    </tr>
                    <c:forEach var="myIncident" items="${myIncidents}" >
                        <tr>
                             <td>${myIncident.incidentID}</td>
@@ -56,14 +56,14 @@
                 </table>
             </div>
             <div class="groupIncidentsGrid">
-                [Incidents in my group]
+                <div id="form-header">Incidents in my group</div>
                 <table id="groupIncidentsTable">
-                    <th>
-                            <td>Incident ID</td>
-                            <td>Status</td>
-                            <td>Decription</td>
-                            <td>Owner</td>
-                    </th>
+                    <tr>
+                            <th>Incident ID</th>
+                            <th>Status</th>
+                            <th>Decription</th>
+                            <th>Owner</th>
+                    </tr>
                    <c:forEach var="groupIncident" items="${groupIncidents}" >
                        <tr>
                             <td>${groupIncident.incidentID}</td>

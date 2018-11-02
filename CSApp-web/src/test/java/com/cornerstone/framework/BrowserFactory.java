@@ -101,13 +101,13 @@ public class BrowserFactory {
 	//Default option
 	public static WebDriver getBrowser()
 	{
-		return getBrowser(BrowserType.CHROME);
+		return getBrowser(BrowserType.IE);
 	}
 	
 	private static InternetExplorerOptions InitializeIEContext()
     {
         //Setting path to Selenium IE driver
-        //System.setProperty("webdriver.ie.driver", "./src/main/java/IEDriverServer.exe");
+        System.setProperty("webdriver.ie.driver", "C:\\ProgramData\\App-V\\Selenium\\IEDriverServer.exe");
         InternetExplorerOptions IEOptions =new InternetExplorerOptions();
         //Set ieCapabilities to avoid stopping on Zoom error
          IEOptions.ignoreZoomSettings();
@@ -128,7 +128,9 @@ public class BrowserFactory {
 	private static void getChromeBrowser(WebDriver driver)
 	{
 		//System.setProperty("webdriver.chrome.driver","./src/main/java/ChromeDriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\ProgramData\\App-V\\Selenium\\ChromeDriver.exe");
 		ChromeOptions options = new ChromeOptions();
+		options.setBinary("C:\\ProgramData\\App-V\\GoogleChromePortable\\App\\Chrome-bin\\chrome.exe");
 		//options.setBinary("c:\\Users\\604772006\\Documents\\apps\\GoogleChromePortable\\App\\Chrome-bin\\chrome.exe");
 		//options.setBinary("c:/Users/604772006/Documents/apps/GoogleChromePortable/App/Chrome-bin/chrome.exe");
 		//DesiredCapabilities capabilities = DesiredCapabilities.chrome();

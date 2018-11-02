@@ -53,6 +53,6 @@ public class WebEventListener extends AbstractWebDriverEventListener {
 
         @Override
 	public void onException(Throwable error, WebDriver driver) {
-		Log.info("Error occurred: " + error);
+		Log.error("Error occurred: " + error);
 	}
 }

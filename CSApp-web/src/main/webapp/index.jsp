@@ -23,13 +23,13 @@
                     <div id="form-header">Login</div>
                     <form action="Login" method="post">
                         <label for="username">Username
-                            <input type="text" name="username">
+                            <input id="usernameTextbox" type="text" name="username">
                         </label>
                         <label for="password">Password
-                            <input type="password" name="password">
+                            <input id="passwordTextbox" type="password" name="password">
                         </label>
-                        <input type="submit" value="Login" name="login" class="button1"/><br>
-                        <input type="submit" value="Login as Guest" name="login-guest" class="button1"/>
+                        <input type="submit" value="Login" name="login" id ="loginButton" class="button1"/><br>
+                        <input type="submit" value="Login as Guest" name="login-guest" id="loginAsGuestButton" class="button1"/>
                     </form>
                 </div>
             </div>

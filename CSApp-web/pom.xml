@@ -8,7 +8,6 @@
 		<groupId>com.cornerstone</groupId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
 	<groupId>com.cornerstone</groupId>
 	<artifactId>CSApp-web</artifactId>
 	<version>1.0-SNAPSHOT</version>
@@ -64,12 +63,12 @@
 			<version>5.3.1</version>
 			<scope>test</scope>
 		</dependency>
-	<dependency>
-		<groupId>org.seleniumhq.selenium</groupId>
-		<artifactId>selenium-java</artifactId>
-		<version>3.8.1</version>
-		<scope>test</scope>
-	</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -127,7 +126,7 @@
 			<version>2.10.0</version>
 			<scope>test</scope>
 		</dependency>
-		<!--  ALL CUCUMBER ARTIFACTS HAVE TO BE THE SAME VERSION -->
+		<!-- ALL CUCUMBER ARTIFACTS HAVE TO BE THE SAME VERSION -->
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -242,9 +241,10 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>CSApp</projectName>
+							<projectName>CSApp-web</projectName>
 							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
 							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+							<jsonFiles>target/cucumber-reports/CucumberTestReport.json</jsonFiles>
 							<buildNumber>1</buildNumber>
 							<parallelTesting>false</parallelTesting>
 						</configuration>

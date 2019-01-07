@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.authentication;
 
 import static org.testng.Assert.assertEquals;
 

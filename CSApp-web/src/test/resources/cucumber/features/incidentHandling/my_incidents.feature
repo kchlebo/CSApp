@@ -1,3 +1,4 @@
+@Ignore
 Feature: Show my and my group's incidents
   In order to see relevant incidents quickly
   As a helpdesk agent

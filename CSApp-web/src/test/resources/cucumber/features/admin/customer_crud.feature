@@ -1,3 +1,4 @@
+@Ignore
 Feature: Customer administration on the system
   Create, Read, Update, Delete a customer
 

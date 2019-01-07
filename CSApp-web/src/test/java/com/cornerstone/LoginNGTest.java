@@ -18,6 +18,7 @@ public class LoginNGTest {
     public LoginNGTest() {
     }
 
+    /*
     @org.testng.annotations.BeforeClass
     public static void setUpClass() throws Exception {
     }

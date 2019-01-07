@@ -1,3 +1,4 @@
+@Ignore
 Feature: Search for incidents
   In order to see specific incidents
   As a helpdesk agent

@@ -1,3 +1,4 @@
+@Ignore
 Feature: Modify user profile details
   It should be possible to modify personal details by the user for his/her data and reset the password
 

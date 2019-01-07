@@ -1,3 +1,4 @@
+@Ignore
 Feature: Open a new incdent refence via e-mail
   In order to get an incident reference automatically from the helpdesk 
   As a customer

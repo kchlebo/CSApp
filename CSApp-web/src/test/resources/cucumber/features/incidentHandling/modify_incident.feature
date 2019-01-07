@@ -1,3 +1,4 @@
+@Ignore
 Feature: Modify an existing incident
   In order to reflect the changes in real life about a problem 
   As a frontline agent

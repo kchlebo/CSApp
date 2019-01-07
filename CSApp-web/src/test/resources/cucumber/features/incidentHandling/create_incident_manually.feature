@@ -1,3 +1,4 @@
+@Ignore
 Feature: Create incident manually
   In order to respond to customers calling the helpdesk via phone
   As a frontline helpdesk agent

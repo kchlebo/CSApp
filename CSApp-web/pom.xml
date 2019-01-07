@@ -18,6 +18,9 @@
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+		<maven.compile.encoding>UTF-8</maven.compile.encoding>
 	</properties>
 
 	<dependencies>
@@ -172,6 +175,16 @@
 			<artifactId>cucumber-reporting</artifactId>
 			<version>4.1.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport 
+			<dependency> <groupId>com.vimalselvam</groupId> <artifactId>cucumber-extentsreport</artifactId> 
+			<version>3.1.1</version> </dependency> -->
+			
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-cucumber4-adapter -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports-cucumber4-adapter</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -241,7 +254,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>CSApp-web</projectName>
+							<projectName>CSApp-web-1.0-SNAPSHOT</projectName>
 							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
 							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
 							<jsonFiles>target/cucumber-reports/CucumberTestReport.json</jsonFiles>

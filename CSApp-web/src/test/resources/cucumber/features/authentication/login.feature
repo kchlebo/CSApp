@@ -1,4 +1,4 @@
-@Login @UI @Ignore
+@Login @UI
 Feature: Login via the homepage
   Description: Login using the UI
 

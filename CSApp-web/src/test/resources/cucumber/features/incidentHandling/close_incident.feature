@@ -1,3 +1,4 @@
+@Ignore
 Feature: Close incident
   In order to close completed incidents
   As a helpdesk agent

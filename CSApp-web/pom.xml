@@ -178,7 +178,7 @@
 		<!-- https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport 
 			<dependency> <groupId>com.vimalselvam</groupId> <artifactId>cucumber-extentsreport</artifactId> 
 			<version>3.1.1</version> </dependency> -->
-			
+
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-cucumber4-adapter -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
@@ -194,85 +194,88 @@
 			</testResource>
 
 		</testResources>
+		<pluginManagement>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.8</source>
-					<target>1.8</target>
-					<compilerArguments>
-						<endorseddirs>${endorsed.dir}</endorseddirs>
-					</compilerArguments>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${endorsed.dir}</outputDirectory>
-							<silent>true</silent>
-							<artifactItems>
-								<artifactItem>
-									<groupId>javax</groupId>
-									<artifactId>javaee-endorsed-api</artifactId>
-									<version>7.0</version>
-									<type>jar</type>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
-			<plugin>
-				<groupId>net.masterthought</groupId>
-				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>3.20.0</version>
-				<executions>
-					<execution>
-						<id>execution</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<projectName>CSApp-web-1.0-SNAPSHOT</projectName>
-							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
-							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
-							<jsonFiles>target/cucumber-reports/CucumberTestReport.json</jsonFiles>
-							<buildNumber>1</buildNumber>
-							<parallelTesting>false</parallelTesting>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.1</version>
-			</plugin>
+			
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<source>1.8</source>
+						<target>1.8</target>
+						<compilerArguments>
+							<endorseddirs>${endorsed.dir}</endorseddirs>
+						</compilerArguments>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.6</version>
+					<executions>
+						<execution>
+							<phase>validate</phase>
+							<goals>
+								<goal>copy</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${endorsed.dir}</outputDirectory>
+								<silent>true</silent>
+								<artifactItems>
+									<artifactItem>
+										<groupId>javax</groupId>
+										<artifactId>javaee-endorsed-api</artifactId>
+										<version>7.0</version>
+										<type>jar</type>
+									</artifactItem>
+								</artifactItems>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+				<plugin>
+					<groupId>net.masterthought</groupId>
+					<artifactId>maven-cucumber-reporting</artifactId>
+					<version>3.20.0</version>
+					<executions>
+						<execution>
+							<id>execution</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+							<configuration>
+								<projectName>CSApp-web-1.0-SNAPSHOT</projectName>
+								<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+								<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+								<jsonFiles>target/cucumber-reports/CucumberTestReport.json</jsonFiles>
+								<buildNumber>1</buildNumber>
+								<parallelTesting>false</parallelTesting>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.1</version>
+				</plugin>
 
 
 		</plugins>
+	</pluginManagement>
 	</build>
 
 </project>

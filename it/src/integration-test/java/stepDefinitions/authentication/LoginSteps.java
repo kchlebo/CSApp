@@ -1,6 +1,8 @@
 package stepDefinitions.authentication;
 
-import static org.testng.Assert.assertEquals;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -9,10 +11,12 @@ import com.cornerstone.framework.BrowserFactory;
 import com.cornerstone.pageObjects.HomePage;
 import com.cornerstone.pageObjects.LoginPage;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+
 
 public class LoginSteps {
 	WebDriver driver;

@@ -7,7 +7,7 @@ package com.cornerstone;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import static org.testng.Assert.*;
+//import static org.testng.Assert.*;
 
 /**
  *
@@ -82,15 +82,15 @@ public class LoginNGTest {
     /**
      * Test of getServletInfo method, of class Login.
      */
-    @org.testng.annotations.Test
-    public void testGetServletInfo() {
-        System.out.println("getServletInfo");
-        //Login instance = new Login();
-        String expResult = "Short description";
-        //String result = instance.getServletInfo();
-        //assertEquals(result, expResult);
-        assertTrue(true);
-        //fail("The test case is a prototype.");
-    }
+    //@org.testng.annotations.Test
+//    public void testGetServletInfo() {
+//        System.out.println("getServletInfo");
+//        //Login instance = new Login();
+//        String expResult = "Short description";
+//        //String result = instance.getServletInfo();
+//        //assertEquals(result, expResult);
+//        assertTrue(true);
+//        //fail("The test case is a prototype.");
+//    }
     
 }

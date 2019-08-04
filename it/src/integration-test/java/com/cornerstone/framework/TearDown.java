@@ -9,14 +9,14 @@ package com.cornerstone.framework;
  *
  * @author Kornel
  */
-import org.testng.annotations.AfterSuite;
+
 
 import com.cornerstone.utilities.Log;
 
 
 public class TearDown {
 
-	@AfterSuite
+
 	public static void tear()
 	{
 		BrowserFactory.closeAllDriver();

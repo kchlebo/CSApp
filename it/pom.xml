@@ -17,134 +17,139 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cucumber.version>4.6.0</cucumber.version>
+		<selenium.version>3.8.1</selenium.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-
-		</dependency>
-
+		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
+			<version>3.8.1</version> </dependency> -->
 		<dependency>
 			<groupId>com.cornerstone</groupId>
 			<artifactId>CSApp-ear</artifactId>
 			<version>1.0-SNAPSHOT</version>
-			<type>pom</type>
+			<type>ear</type>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.jwebunit</groupId>
 			<artifactId>jwebunit-htmlunit-plugin</artifactId>
 			<version>3.3</version>
-
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.3.1</version>
-
+			<version>5.4.0</version>
+			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>1.4.0</version>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.8.1</version>
-
+			<version>${selenium.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
-			<version>3.8.1</version>
-
+			<version>${selenium.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-chrome-driver</artifactId>
-			<version>3.8.1</version>
-
+			<version>${selenium.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-api</artifactId>
-			<version>3.8.1</version>
-
+			<version>${selenium.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/htmlunit-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>htmlunit-driver</artifactId>
 			<version>2.29.0</version>
-
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-ie-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-ie-driver</artifactId>
-			<version>3.8.1</version>
-
+			<version>${selenium.version}</version>
+			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.13.1</version>
-
-
-		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.10.0</version>
-
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<version>2.10.0</version>
-
+			<scope>test</scope>
 		</dependency>
-		<!-- ALL CUCUMBER ARTIFACTS HAVE TO BE THE SAME VERSION formerly / 4.1.0-->
+		<!-- ALL CUCUMBER ARTIFACTS HAVE TO BE THE SAME VERSION formerly / 4.1.0 -->
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>4.6.0</version>
-
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-core</artifactId>
-			<version>4.6.0</version>
-
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>4.6.0</version>
-
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-jvm</artifactId>
-			<version>4.6.0</version>
+			<version>${cucumber.version}</version>
 			<type>pom</type>
-
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>4.6.0</version>
-
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 
@@ -152,7 +157,8 @@
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
-			<version>4.6.0</version>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport 
 			<dependency> <groupId>com.vimalselvam</groupId> <artifactId>cucumber-extentsreport</artifactId> 
@@ -163,7 +169,15 @@
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports-cucumber4-adapter</artifactId>
 			<version>1.0.2</version>
+			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>6.2.2.jre8</version>
+            
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -223,38 +237,144 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			 <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>4.6.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>cucumber-jvm-example</projectName>
-                            <!-- optional, per documentation set this to "true" to bypass generation of Cucumber Reports entirely, defaults to false if not specified -->
-                            <skip>false</skip>
-                            <!-- output directory for the generated report -->
-                            <outputDirectory>target/cucumber-reports</outputDirectory>
-                            <!-- optional, defaults to outputDirectory if not specified -->
-                            <inputDirectory>target/cucumber-reports</inputDirectory>
-                            <jsonFiles>
-                                <!-- supports wildcard or name pattern -->
-                                <param>**/*.json</param>
-                            </jsonFiles>
-                            <!-- optional, defaults to outputDirectory if not specified -->
-                            <classificationDirectory>${project.build.directory}/classifications</classificationDirectory>
-                            <parallelTesting>false</parallelTesting>
-                            <!-- optional, set true to fail build on test failures -->
-                            <checkBuildResult>false</checkBuildResult>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>4.6.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>cucumber-jvm-example</projectName>
+							<!-- optional, per documentation set this to "true" to bypass generation 
+								of Cucumber Reports entirely, defaults to false if not specified -->
+							<skip>false</skip>
+							<!-- output directory for the generated report -->
+							<outputDirectory>target/cucumber-reports</outputDirectory>
+							<!-- optional, defaults to outputDirectory if not specified -->
+							<inputDirectory>target/cucumber-reports</inputDirectory>
+							<jsonFiles>
+								<!-- supports wildcard or name pattern -->
+								<param>**/*.json</param>
+							</jsonFiles>
+							<!-- optional, defaults to outputDirectory if not specified -->
+							<classificationDirectory>${project.build.directory}/classifications</classificationDirectory>
+							<parallelTesting>false</parallelTesting>
+							<!-- optional, set true to fail build on test failures -->
+							<checkBuildResult>false</checkBuildResult>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId> 
+				<version>1.6.0</version> <executions> <execution> <id>my-execution</id> <phase>post-integration-test</phase> 
+				<goals> <goal>java</goal> </goals> </execution> </executions> <configuration> 
+				<includePluginDependencies>true</includePluginDependencies> <mainClass>com.cornerstone.framework.TearDown</mainClass> 
+				<executable>java</executable> <executable>java</executable> <arguments> <argument>-classpath</argument> 
+				automatically creates the classpath using all project dependencies, also 
+				adding the project build directory <classpath/> <argument>com.cornerstone.framework.TearDown</argument> 
+				</arguments> </configuration> </plugin> -->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId> 
+				<executions> <execution> <id>pre-integration-test</id> <phase>pre-integration-test</phase> 
+				<goals> <goal>java</goal> </goals> <configuration> <mainClass>com.cornerstone.framework.TestFrameworkInit</mainClass> 
+				<classpathScope>test</classpathScope> </configuration> </execution> <execution> 
+				<id>post-integration-test</id> <phase>post-integration-test</phase> <goals> 
+				<goal>java</goal> </goals> <configuration> <mainClass>com.cornerstone.framework.TestFrameworkTearDown</mainClass> 
+				<argument>com.cornerstone.framework.TestFrameworkTearDown</argument> <classpathScope>test</classpathScope> 
+				</configuration> </execution> </executions> </plugin> <plugin> <groupId>org.codehaus.mojo</groupId> 
+				<artifactId>build-helper-maven-plugin</artifactId> <executions> <execution> 
+				<phase>process-resources</phase> <goals> <goal>add-source</goal> </goals> 
+				<configuration> <sources> <source>src/integration-test/java/com/cornerstone/framework</source> 
+				</sources> </configuration> </execution> </executions> </plugin> -->
+
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				
+				<executions>
+					<execution>
+						<id>start-container</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>stop-container</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+				 
+				<configuration>
+					<!-- Container configuration -->
+					<container>
+						<containerId>glassfish4x</containerId>
+						<!-- 
+						<zipUrlInstaller>
+							<url>https://download.oracle.com/glassfish/4.1.2/release/glassfish-4.1.2.zip</url>
+							<downloadDir>${project.build.directory}/downloads</downloadDir>
+							<extractDir>${project.build.directory}/extracts</extractDir>
+						</zipUrlInstaller>
+						Instead of downloading the container, you can also reuse an existing 
+							installation by settings its directory: <home>C:/Program Files/..</home> -->
+						<home>c:/Utils/glassfish4</home>
+						<output>${project.build.directory}/glassfish4x/container.log</output>
+						<append>false</append>
+						<log>${project.build.directory}/glassfish4x/cargo.log</log>
+			<dependencies>			
+						<dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            
+            
+        </dependency>
+        </dependencies>
+					</container>
+
+					<!-- Configuration to use with the container or the deployer -->
+					<configuration>
+						<type>standalone</type>
+						<properties>
+						
+							<cargo.hostname>localhost</cargo.hostname>
+							<cargo.glassfish.admin.port>4848</cargo.glassfish.admin.port>
+							<cargo.servlet.port>8080</cargo.servlet.port>
+							<cargo.remote.username>admin</cargo.remote.username>
+							<cargo.remote.password></cargo.remote.password>
+							<cargo.glassfish.domain.name>domain1</cargo.glassfish.domain.name>						
+						 <cargo.datasource.datasource.mssql>
+        					cargo.datasource.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver|
+       						cargo.datasource.url=jdbc:sqlserver://localhost\DESKTOP-SF53NKA\SQLEXPRESS:1433;databaseName=CornerStone;create=false|
+        cargo.datasource.jndi=jdbc/CSDB|
+        cargo.datasource.username=test|
+        cargo.datasource.password=test
+      </cargo.datasource.datasource.mssql>
+      
+      <cargo.resource.resource.mssqlpool>
+        cargo.resource.name=CSDBPool|
+        cargo.resource.type=java.sql.Driver|
+        cargo.resource.class=com.microsoft.sqlserver.jdbc.SQLServerDriver|
+        cargo.resource.parameters=databaseName=CornerStone;user=test;password=test
+      </cargo.resource.resource.mssqlpool>
+      						</properties>
+					</configuration>
+					<deployables>
+						<deployable>
+							<groupId>com.cornerstone</groupId>
+							<artifactId>CSApp-ear</artifactId>
+							<type>ear</type>
+						</deployable>
+					</deployables>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

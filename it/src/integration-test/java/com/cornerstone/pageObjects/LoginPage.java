@@ -24,7 +24,7 @@ public class LoginPage {
 	@FindBy(css="input[id='loginAsGuestButton']")
 	private  WebElement loginAsGuestButton;
 	
-	private static final String loginURL = "http://localhost:8080/CSApp-web-1.0-SNAPSHOT";
+	private static final String loginURL = "http://localhost:8080/CSApp-web";
 	
 	public void openURL()
 	{
